@@ -56,16 +56,32 @@ Ejecuta el servidor y abre *Postman* para testear la API. La URL del servidor es
 ## Tarea 2: Implementar el hash de la contraseña
 
 El signup está implementado, podemos hacer una llamada POST a la ruta `auth/signup` con un body como el siguiente:
+
 ```json
 {
   "username": "test",
   "email": "test@testing.com",
-  "password": "1234"
+  "password": "Hello1234"
 }
 ```
 
 Esto creará un usuario con todos los datos, pero la contraseña se guardará en texto plano. Esto no es seguro. Así que antes de lanzar la aplicación a producción debemos implementar un hash de la contraseña.
 
+## Tarea 3: Oculta el password en la respuesta del signup
+
+¡Ojo! A pesar de que el password pasa por un hash, no es buena idea que se muestre en la respuesta del signup. Así que debes eliminar el campo password de la respuesta.
+
+Genera un DTO llamado `SignupResponse` que contenga los campos `username`, `email` y `id`. Este DTO se usará para devolver la respuesta del signup sin el campo password.
+
+Ejemplo de respuesta:
+
+```json
+{
+  "username": "test",
+  "email": "test@testing.com",
+  "id": 1
+}
+```
 
 ## Testing
 
