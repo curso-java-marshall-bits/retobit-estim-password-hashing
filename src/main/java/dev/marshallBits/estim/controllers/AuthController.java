@@ -1,7 +1,7 @@
 package dev.marshallBits.estim.controllers;
 
 import dev.marshallBits.estim.dto.CreateUserDTO;
-import dev.marshallBits.estim.models.User;
+import dev.marshallBits.estim.dto.SignupResponseDTO;
 import dev.marshallBits.estim.services.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class AuthController {
 
     @PostMapping("/signup")
     @ResponseStatus(HttpStatus.CREATED)
-    public User signup(@Valid @RequestBody CreateUserDTO createUserDTO) {
+    public SignupResponseDTO signup(@Valid @RequestBody CreateUserDTO createUserDTO) {
         return userService.registerUser(createUserDTO);
     }
 }
