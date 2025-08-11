@@ -53,7 +53,18 @@ Esta app contiene muchas cosas, así que te recomiendo que abras el proyecto y m
 
 Ejecuta el servidor y abre *Postman* para testear la API. La URL del servidor es: `http://localhost:8080/`, como siempre.
 
+## Tarea 2: Implementar el hash de la contraseña
 
+El signup está implementado, podemos hacer una llamada POST a la ruta `auth/signup` con un body como el siguiente:
+```json
+{
+  "username": "test",
+  "email": "test@testing.com",
+  "password": "1234"
+}
+```
+
+Esto creará un usuario con todos los datos, pero la contraseña se guardará en texto plano. Esto no es seguro. Así que antes de lanzar la aplicación a producción debemos implementar un hash de la contraseña.
 
 
 ## Testing

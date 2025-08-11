@@ -4,7 +4,9 @@ import dev.marshallBits.estim.models.Game;
 import dev.marshallBits.estim.models.ReviewType;
 import dev.marshallBits.estim.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -22,7 +24,7 @@ public class GameServiceImpl implements GameService {
     @Override
     public Game findById(Long id) {
         return gameRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Game not found with id: " + id));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Juego no encontrado con id: " + id));
     }
 
     @Override
