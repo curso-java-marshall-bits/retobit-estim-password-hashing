@@ -1,11 +1,12 @@
-# RetoBit: Estim 🏴‍☠️ Login
+# RetoBit: Estim 🏴‍☠️ Password Hashing
 
-Tenemos una estupenda aplicación llamada **Estim**, no creo que el nombre se parezca a nada existente... 🧐 Esta app es un
+Tenemos una estupenda aplicación llamada **Estim**, no creo que el nombre se parezca a nada existente... 🧐 Esta app es
+un
 sistema de gestión de videojuegos. La base de datos que hay conectada es de pruebas, así que no debes preocuparte por su
 configuración.
 
-Tu tarea consiste en realizar el login de la aplicación. Deberemos devolver un token de acceso que nos permita realizar
-peticiones a la API más adelante. De momento la seguridad no está implementada.
+Tu tarea consiste en implementar el hash de la contraseña de los usuarios al registrarse. Actualmente, la app permite
+registrar usuarios a través de una API REST, pero las contraseñas se guardan en texto plano, lo cual es un gran problema de seguridad.
 
 ## Fork del repositorio:
 
@@ -23,7 +24,7 @@ Ahora hay que descargarse el proyecto en tu computadora.
 
 ### 1. Asegúrate de que estás en la URL de TU copia del repositorio
 
-Si la URL es esta: https://github.com/curso-java-marshall-bits/estim-login **NO ES CORRECTO**.
+Si la URL es esta: https://github.com/curso-java-marshall-bits/retobit-estim-password-hashing **NO ES CORRECTO**.
 
 Donde aparece 'curso-java-marshall-bits' debería aparecer tu nombre de usuario. Haz click en tu perfil y mira tus
 repositorios para comprobar si hiciste el fork. En caso contrario vuelve al paso anterior.
@@ -86,7 +87,7 @@ Algo así debería aparecer en la respuesta:
 {
   "username": "test",
   "email": "test@testing.com",
-  "password": "$2a$10$EIXo5j1z5Z"
+  "password": "$2a$10$EIXo5j1z5ZMarShaLlIsTHeBest"
 }
 ```
 
